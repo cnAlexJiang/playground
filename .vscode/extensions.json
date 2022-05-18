@@ -3,6 +3,5 @@
         "EditorConfig.EditorConfig",
         "ms-vscode.vscode-typescript-tslint-plugin",
         "esbenp.prettier-vscode",
-        "zhangyi.idg-vscode-snippets"
     ]
 }
