@@ -1,0 +1,42 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn test
+
+PATH: 
+  /Users/alex/.rvm/gems/ruby-2.7.2/bin:/Users/alex/.rvm/gems/ruby-2.7.2@global/bin:/Users/alex/.rvm/rubies/ruby-2.7.2/bin:/Users/alex/development/flutter/bin:/Users/alex/.pyenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Library/Apple/usr/bin:/Users/alex/.rvm/gems/ruby-2.7.2/bin:/Users/alex/.rvm/gems/ruby-2.7.2@global/bin:/Users/alex/.rvm/rubies/ruby-2.7.2/bin:/Users/alex/development/flutter/bin:/Users/alex/.pyenv/shims:/Users/alex/.cargo/bin:/Users/alex/.rvm/bin:/Users/alex/.rvm/bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.18.2
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/alex/code/playground/node-demo1/package.json: Unexpected token } in JSON at position 135
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "node-demo1",
+    "version": "1.0.0",
+    "description": "",
+    "main": "test.js",
+    "scripts": {
+      "test": "node test.js",
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
