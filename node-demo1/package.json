@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "test.js",
+
+  
   "scripts": {
-    "test": "node test.js"
+    "preserve":"node check.js",
+    "serve": "node test.js"
   },
   "keywords": [],
   "author": "",

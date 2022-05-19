@@ -29,6 +29,10 @@
   export NODE_OPTIONS="--max-old-space-size=5120"
   // 4
   source .bash_profile   
+  // 5 如果使用了 zsh 需要 修改 zshrc
+  vi .zshrc
+  在zsh加入 source .bash_profile 
+  执行    source .zshrc 
   //  重启terminal  查看效果
   node -e 'console.log(v8.getHeapStatistics().heap_size_limit/(1024*1024))'
 ```
