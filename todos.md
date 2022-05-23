@@ -12,3 +12,6 @@
   - [] MutationObserver
   - [] ResizeObserver
 - [] css variable
+
+- [] vite + vitest + ts 
+- [] 研究 dota项目的 搭建 + 测试方式 + 自己学习补全测试
