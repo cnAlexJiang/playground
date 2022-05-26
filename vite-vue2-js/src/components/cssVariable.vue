@@ -10,11 +10,17 @@ export default {
 
 }
 </script>
-<style >
+<style>
 :root {
   --w: 456px;
   --a: 123px;
   --b: red;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+  --b: blue;
+  }
 }
 </style>
 <style scoped>

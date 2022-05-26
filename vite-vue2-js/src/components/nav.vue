@@ -5,6 +5,8 @@
       <li>observer</li>
       <li>cssVariable</li>
       <li>routerQuyery</li>
+      <li>tagTemplate</li>
+      <li>boxSizing</li>
     </ul>
   </div>
 </template>
