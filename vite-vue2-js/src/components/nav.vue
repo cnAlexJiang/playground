@@ -7,6 +7,7 @@
       <li>routerQuyery</li>
       <li>tagTemplate</li>
       <li>boxSizing</li>
+      <li>capture</li>
     </ul>
   </div>
 </template>
