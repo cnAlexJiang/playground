@@ -4,3 +4,5 @@ hello-rust/target
 .DS_Store
 fork-ts-checker-webpack-plugin
 dota-demo
+
+**/node_modules
