@@ -1,8 +1,4 @@
-class TeamStanding {
-  team_abbreviation: string
-  team_id: number
-  // ...
-}
+ 
 interface TeamStanding {
   team_abbreviation: string
   team_id: number
@@ -11,10 +7,10 @@ interface TeamStanding {
 
 
 // 类型合并
-let a:TeamStanding = {
+let aa:TeamStanding = {
   team_abbreviation: '123',
   team_id: 123,
   asd: 123
 
 }  
-console.log(a)
+console.log(aa)
