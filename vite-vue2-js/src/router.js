@@ -9,7 +9,7 @@ import routerQuyeryChild from './components/routerQuyeryChild.vue'
 import tagTemplate from './components/tagTemplate.vue'
 import boxSizing from './components/boxSizing.vue'
 import capture from './components/capture.vue'
-
+import svgTest from './components/svgTest.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -23,6 +23,7 @@ const routes = [
   { path: '/tagTemplate', name: 'tagTemplate',component: tagTemplate },
   { path: '/boxSizing', name: 'boxSizing',component: boxSizing },
   { path: '/capture', name: 'capture',component: capture },
+  { path: '/svgTest', name: 'svgTest',component: capture },
 ]
 
 export const router = new VueRouter({

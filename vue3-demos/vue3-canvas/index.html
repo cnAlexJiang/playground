@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="icon" href="data:;base64,=">
+    <title>vue3造轮子-第二天</title>
+</head>
+<body>
+
+<!--<div id="App">-->
+<!--    <p>{{user}}</p>-->
+<!--</div>-->
+
+<canvas id="App" width="200px" height="200px" style="background: darkseagreen"></canvas>
+
+<script>
+    /*在之前的day1 的基础上
+    *
+    * vue3 新增了自定义渲染 平台
+    * 可以按自己的需求去吧 数据渲染到我们想要的平台上
+    * */
+    const Vue={
+        /*定义一个 createRender  传入两个参数
+        * querySelect 处理返回要渲染的根节点
+        * inset 把虚拟子节点 挂载到 根节点*/
+        createRender({querySelect,inset}){
+            return {
+                createApp(options){
+                    return {
+                        mount(sel){
+                            //把根节点作为参数传入 querySelect 返回它的实例
+                             this.parent = querySelect(sel);
+                            if(!options.render){
+                                options.render = this.compile(parent.innerHTML);
+                            }
+                            if(options.setup){
+                                options.setupData = options.setup();
+                            }
+                            if(options.data){
+                                options.data = options.data();
+                            }
+                            this.proxy = new Proxy(this,{
+                                set(target, p, value, receiver) {
+                                },
+                                get(target, p, receiver) {
+                                    if(p in options.setupData){
+                                        return options.setupData[p];
+                                    }else {
+                                        return options.data[p];
+                                    }
+                                }
+                            });
+
+                            const el = options.render.call(this.proxy);
+
+                            /*把原先 渲染到根节点的方式封装为一个方法 把子节点，和跟节点都传入 inset 在里面处理渲染的方式*/
+                            inset(el,this.parent);
+                        },
+                        compile(template)
+                        {
+                            return function render() {
+
+                                //canvas 返回对应的数据
+                                return this.user2;
+
+                                // const p = document.createElement('p');
+                                // p.textContent = this.user;
+                                // return p;
+                            }
+                        }
+                    }
+
+                }
+            }
+        },
+
+        createApp(options){
+
+            const render = this.createRender({
+                querySelect(sel){
+                    //模拟canvas
+                    const canvas = document.querySelector(sel);
+                    const ctx = canvas.getContext("2d");
+                    return ctx;
+
+                    /* dom */
+                    // return document.querySelector(sel);
+                },
+                inset(el,parent){
+
+                    //canvas
+                    parent.font="12px Arial";
+                    parent.fillText(el,0,50);
+
+                    //dom
+                    // parent.innerHTML = "";
+                    // parent.appendChild(el);
+                }
+            });
+
+            return render.createApp(options)
+        }
+    }
+
+</script>
+
+<script>
+
+    var App = Vue.createApp({
+        //vue 2 数据对象
+        data(){
+            return {
+                user:"小面",
+                user2:"我是小米"
+            }
+        },
+        //vue 3 的数据对象定义
+        setup(){
+            return {
+                user:"setup 定义的 userzh值"
+            }
+        }
+    })
+    App.mount("#App");
+
+</script>
+</body>
+</html>
