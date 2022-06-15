@@ -8,6 +8,7 @@
       <li>tagTemplate</li>
       <li>boxSizing</li>
       <li>capture</li>
+      <li>svgTest</li>
     </ul>
   </div>
 </template>
