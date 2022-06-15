@@ -9,6 +9,8 @@
       <li>boxSizing</li>
       <li>capture</li>
       <li>svgTest</li>
+      <li>iframeView</li>
+      
     </ul>
   </div>
 </template>

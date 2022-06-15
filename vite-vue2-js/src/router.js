@@ -10,6 +10,9 @@ import tagTemplate from './components/tagTemplate.vue'
 import boxSizing from './components/boxSizing.vue'
 import capture from './components/capture.vue'
 import svgTest from './components/svgTest.vue'
+import iframeView from './components/iframeView.vue'
+import iframe1 from './components/iframe1.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -24,6 +27,8 @@ const routes = [
   { path: '/boxSizing', name: 'boxSizing',component: boxSizing },
   { path: '/capture', name: 'capture',component: capture },
   { path: '/svgTest', name: 'svgTest',component: capture },
+  { path: '/iframeView', name: 'iframeView',component: iframeView },
+  { path: '/iframe1', name: 'iframe1',component: iframe1 },
 ]
 
 export const router = new VueRouter({
