@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <div>
+      test
+    </div>
+    <script>
+        class TestThis{
+  constructor(){
+    this.a = 0
+    
+    setTimeout(this.change.bind(this),500)
+    return this
+  }
+  change() {
+    this.a++
+    this.test()
+  }
+  test(){
+    console.log(this)
+    debugger
+    return new Promise((resolve)=>{
+      console.log(this)
+      debugger
+      const timer = setInterval(()=>{
+        debugger
+        if(this.a>0){
+          console.log('this.a changed',this.a)
+          clearInterval(timer)
+        }
+      })
+    })
+  }
+}
+window.testThis = new TestThis()
+    </script>
+</body>
+</html>
