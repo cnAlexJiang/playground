@@ -3,9 +3,8 @@ hello-rust/target
 */node_modules/*
 .DS_Store
 fork-ts-checker-webpack-plugin
-dota-demo
 
 **/node_modules
-
+.vscode
 *todel*
 *node_modules*
