@@ -2,6 +2,11 @@ import './style.css'
 import javascriptLogo from './javascript.svg'
 import { setupCounter } from './counter.js'
 
+import './packages/decorate-learn/test1'
+
+import './packages/decorate-learn/test4'
+
+
 document.querySelector('#app').innerHTML = `
   <div>
     <a href="https://vitejs.dev" target="_blank">
@@ -21,3 +26,10 @@ document.querySelector('#app').innerHTML = `
 `
 
 setupCounter(document.querySelector('#counter'))
+
+
+// 注意这里的 `target` 是 `Dog.prototype`
+function readonly(target, key, descriptor) {
+  descriptor.writable = false
+  return descriptor
+}
