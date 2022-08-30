@@ -1,8 +1,14 @@
 <script setup>
+  import { useRoute, useRouter } from 'vue-router'
   import { ref , onMounted} from 'vue'
     onMounted(()=>{
-      console.log(111,this)
+    const route = useRoute();
+    const router = useRouter()
+    console.log(111,this, route, router)
+
     })
+
+
   </script>
   
   <template>
