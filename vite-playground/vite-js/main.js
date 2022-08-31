@@ -2,9 +2,11 @@ import './style.css'
 import javascriptLogo from './javascript.svg'
 import { setupCounter } from './counter.js'
 
-import './packages/decorate-learn/test1'
+// import './packages/decorate-learn/test1'
 
-import './packages/decorate-learn/test4'
+// import './packages/decorate-learn/test4'
+// import './packages/esmodule-test/a'
+import './packages/circular-dependence/index'
 
 
 document.querySelector('#app').innerHTML = `
