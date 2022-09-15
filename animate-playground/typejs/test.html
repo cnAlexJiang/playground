@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+  <style>
+    .typed{
+      height: 250px;
+        background-color: rgba(0, 0, 0, 0.85);
+        padding: 10px;
+        color: #f0f0f0;
+        text-shadow: #000 0px 1px 0px;
+        font-family: "Consolas", "Courier New", "Courier";
+        font-size: 1.45em;
+        line-height: 1.40em;
+        font-weight: 500;
+        text-align: left;
+        overflow: hidden;
+        -webkit-transition: all 0.5s ease-out;
+        -moz-transition: all 0.5s ease-out;
+        -ms-transition: all 0.5s ease-out;
+        -o-transition: all 0.5s ease-out;
+        transition: all 0.5s ease-out;
+    }
+  </style>
+</head>
+
+<body>
+  <div >
+    <span id="test"></span>
+  </div>
+  <script>
+    try {
+      var typed = new Typed("#test", {
+        strings: ['醒亦念卿，梦亦念卿', '频繁记录，只因生活和你太值得❤'],//字符串
+        startDelay: 0,//开始的延迟
+        typeSpeed: 200,//打字速度
+        backSpeed: 100,//回退速度
+        loop: true,//是否循环
+        showCursor: true,//显示游标
+        shuffle: false//是否随机
+      });
+    } catch (err) {
+    }
+  </script>
+</body>
+
+</html>
