@@ -13,5 +13,6 @@
     "editor.formatOnSave": true
   },
   "prettier.configPath": ".prettierrc",
-  "typescript.preferences.importModuleSpecifier": "relative"
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "liveServer.settings.port": 5501
 }
