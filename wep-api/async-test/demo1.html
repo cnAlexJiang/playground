@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>test aysnc </div>
+  <script>
+    function p1 () {
+      console.log("执行p1")
+      // throw new Error(111)
+
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(1)
+          console.log('新的宏任务')
+        })
+      })
+    }
+    async function test1 () {
+      console.log('test 111')
+      try {
+        await p1()
+      } catch (e) {
+        console.log(e)
+      }
+      console.log("结束p1")
+
+      Promise.resolve().then(() => {
+        console.log('test promise')
+      })
+      return 1
+    }
+    function test2 () {
+      console.log('test 222')
+    }
+
+    test1();
+    test2();
+    console.log('test 333')
+
+  </script>
+</body>
+
+</html>
