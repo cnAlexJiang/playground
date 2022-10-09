@@ -1,5 +1,3 @@
-
-
 <template>
   <div>
     container1
@@ -9,10 +7,11 @@
   </div>
 </template>
 <script setup>
-import TestA from './components/TestA.vue';
-import TestC from './components/TestC.vue';
-import TestE from './components/TestE.vue';
-import { provide } from 'vue'
+import TestA from './components/TestA.vue'
+import TestC from './components/TestC.vue'
+import TestE from './components/TestE.vue'
+import { provide, onMounted } from 'vue'
+console.log('app on setup')
 
 provide(/* 注入名 */ 'message', /* 值 */ 'hello!')
 
@@ -22,8 +21,8 @@ function test1() {
 function test2() {
   console.log(222, ...arguments)
 }
-
+onMounted(() => {
+  console.log('app on mounted')
+})
 </script>
-<style scoped>
-
-</style>
+<style scoped></style>
