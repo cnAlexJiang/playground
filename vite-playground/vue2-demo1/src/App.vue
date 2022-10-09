@@ -1,8 +1,16 @@
 <template>
-  <div>app</div>
+  <div>app <TestA /></div>
 </template>
 <script>
-export default {}
+import TestA from './components/TestA.vue'
+export default {
+  components: {
+    TestA,
+  },
+  created() {
+    console.log('App created')
+  },
+}
 </script>
 
 <style scoped>
