@@ -1,31 +1,29 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
-</script>
+
 
 <template>
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    container1
+    <TestA></TestA>
+    <TestC aa="11" bb="22"> </TestC>
+    <TestE @submit="test1" @test2="test2" />
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
+<script setup>
+import TestA from './components/TestA.vue';
+import TestC from './components/TestC.vue';
+import TestE from './components/TestE.vue';
+import { provide } from 'vue'
 
+provide(/* 注入名 */ 'message', /* 值 */ 'hello!')
+
+function test1() {
+  console.log(111, ...arguments)
+}
+function test2() {
+  console.log(222, ...arguments)
+}
+
+</script>
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+
 </style>
