@@ -4,12 +4,15 @@
     <TestA></TestA>
     <TestC aa="11" bb="22"> </TestC>
     <TestE @submit="test1" @test2="test2" />
+    <TestDirect></TestDirect>
+
   </div>
 </template>
 <script setup>
 import TestA from './components/TestA.vue'
 import TestC from './components/TestC.vue'
 import TestE from './components/TestE.vue'
+import TestDirect from './components/TestDirect.vue'
 import { provide, onMounted } from 'vue'
 console.log('app on setup')
 
@@ -25,4 +28,6 @@ onMounted(() => {
   console.log('app on mounted')
 })
 </script>
-<style scoped></style>
+<style scoped>
+
+</style>
