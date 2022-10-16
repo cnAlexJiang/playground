@@ -5,7 +5,9 @@
     <TestC aa="11" bb="22"> </TestC>
     <TestE @submit="test1" @test2="test2" />
     <TestDirect></TestDirect>
-
+    <h1>
+      {{ $translate('greetings.hello') }}
+    </h1>
   </div>
 </template>
 <script setup>
