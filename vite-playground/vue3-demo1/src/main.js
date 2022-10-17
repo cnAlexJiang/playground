@@ -5,8 +5,8 @@ import App2 from './App2.vue'
 import i18nPlugin from './plugins/i18n'
 
 
-const app1 = createApp(App).mount('#app1')
-const app2 = createApp(App2).mount('#app2')
+const app1 = createApp(App)
+const app2 = createApp(App2)
 
 
 
@@ -16,9 +16,6 @@ app1.use(i18nPlugin, {
     }
 })
 
+app1.mount('#app1')
 
-app2.use(i18nPlugin, {
-    greetings: {
-        hello: 'Bonjour!'
-    }
-})
+app2.mount('#app2')
