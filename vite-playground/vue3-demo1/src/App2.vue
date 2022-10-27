@@ -11,6 +11,7 @@
     </TestF>
     <TestHook></TestHook>
     <TestTransition />
+    <TestTeleport />
   </div>
 </template>
 <script setup>
@@ -19,6 +20,7 @@ import TestD from './components/TestD.vue';
 import TestF from './components/TestF.vue';
 import TestHook from './components/TestHook.vue';
 import TestTransition from './components/TestTransition.vue'
+import TestTeleport from './components/TestTeleport.vue'
 </script>
 <style scoped>
 
