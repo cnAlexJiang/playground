@@ -20,10 +20,11 @@ export default defineComponent({
            b.value = !b.value
         }
         const test1 = (e:any)=> {
-            console.log('window',  e.path, e.target)
+            console.log('window',   e.target)
         }
         const test2 = (e:any)=> {
-            console.log('document',  e.path, e.target)
+            e.stopPropagation()
+            console.log('document',   e.target)
         }
          window.addEventListener('mousemove',(e) =>{
             x.value = e.x;
@@ -32,6 +33,9 @@ export default defineComponent({
 
         window.addEventListener('keydown', test1)
         document.addEventListener('keydown', test2)
+        const test = (e:any)=> {
+            console.log('document', e)
+        }
         return {
             x,y,
             a,
@@ -39,10 +43,22 @@ export default defineComponent({
             t,
             handlerA,
             handlerB,
-            increase
+            increase,
+            test
         }
     },
-    render() {
+    render(){
+        return <div>
+
+            <div   onMouseenter={this.test} style="width:200px;height: 200px; border: 1px solid red" >
+                111
+                <div style="width:100px;height: 100px; border: 1px solid blue">
+                    2222
+                </div>
+            </div>
+        </div>
+    },
+    render1() {
         return <div>
             <h2>{this.t}</h2>
             <div>{this.x}-{this.y}</div>
@@ -57,17 +73,18 @@ export default defineComponent({
              </div>}
              {this.b && <h1>bbb</h1>}
             </h3>
-            <div tabindex="-1">
-                <div tabindex="-1">
+            <h1 tabindex="-1">
+                000
+                <h2 tabindex="-1">
                 1111111
-                </div>
-                <div tabindex="-1">
+                </h2>
+                <h3 tabindex="-1">
                 222222
-                </div>
-                <div >
+                </h3>
+                <h4 >
                 333333
-                </div>
-            </div>
+                </h4>
+            </h1>
         </div>
     }
 })
