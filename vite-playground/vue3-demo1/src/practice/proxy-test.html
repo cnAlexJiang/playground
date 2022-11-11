@@ -14,7 +14,11 @@
 </body>
 <script>
     const obj = {
-        name: 'win'
+        name: 'win',
+        info: {
+            key1: 111,
+            key2: 222
+        }
     }
 
     const handler = {
@@ -30,7 +34,7 @@
 
     const data = new Proxy(obj, handler)
     data.name = 'ten'
-    console.log(data.name, 'data.name22')
+    console.log(data.name, 'data.name')
 
 </script>
 
