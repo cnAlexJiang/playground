@@ -163,10 +163,13 @@ import { Toggle } from './components/test-event'
 import { LoginControl, Page } from './components/test-condition-render'
 import { NumberList } from './components/test-list-render'
 import { NameForm, EssayForm, FlavorForm, Reservation } from './components/test-form'
+import { Calculator } from './components/test-state-hoist'
+import { SignUpDialog } from './components/test-composition-extend'
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const app = (
   <div>
-    <Reservation />
+    <SignUpDialog />
   </div>
 )
 root.render(app);
