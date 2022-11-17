@@ -4,11 +4,13 @@ specifiers:
   '@types/react': ^18.0.24
   '@types/react-dom': ^18.0.8
   '@vitejs/plugin-react': ^2.2.0
+  lodash: ^4.17.21
   react: ^18.2.0
   react-dom: ^18.2.0
   vite: ^3.2.3
 
 dependencies:
+  lodash: r2.cnpmjs.org/lodash/4.17.21
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
 
@@ -877,6 +879,12 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
     dev: true
+
+  r2.cnpmjs.org/lodash/4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/lodash/-/lodash-4.17.21.tgz}
+    name: lodash
+    version: 4.17.21
+    dev: false
 
   r2.cnpmjs.org/loose-envify/1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/loose-envify/-/loose-envify-1.4.0.tgz}
