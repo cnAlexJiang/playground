@@ -12,6 +12,9 @@ import capture from './components/capture.vue'
 import svgTest from './components/svgTest.vue'
 import iframeView from './components/iframeView.vue'
 import iframe1 from './components/iframe1.vue'
+import CompA from './components/diff-key-test/CompA.vue'
+import CompRender from './components/diff-key-test/CompRender.vue'
+
 
 Vue.use(VueRouter)
 
@@ -29,6 +32,8 @@ const routes = [
   { path: '/svgTest', name: 'svgTest',component: capture },
   { path: '/iframeView', name: 'iframeView',component: iframeView },
   { path: '/iframe1', name: 'iframe1',component: iframe1 },
+  { path: '/diff', name: 'diff',component: CompA },
+  { path: '/render', name: 'render',component: CompRender },
 ]
 
 export const router = new VueRouter({
