@@ -165,11 +165,11 @@ import { NumberList } from './components/test-list-render'
 import { NameForm, EssayForm, FlavorForm, Reservation } from './components/test-form'
 import { Calculator } from './components/test-state-hoist'
 import { SignUpDialog } from './components/test-composition-extend'
-
+import { FilterableProductTable } from './components/test-react-philosophe/FilterableProductTable'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const app = (
   <div>
-    <SignUpDialog />
+    <FilterableProductTable />
   </div>
 )
 root.render(app);
