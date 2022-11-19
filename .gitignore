@@ -8,3 +8,5 @@ fork-ts-checker-webpack-plugin
 .vscode
 *todel*
 *node_modules*
+
+*.class

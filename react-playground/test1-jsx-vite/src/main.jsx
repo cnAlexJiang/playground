@@ -173,10 +173,14 @@ import { FilterableProductTable } from './components/test-react-philosophe-hook/
 import { Glossary } from './components/advance-use/test-fragment'
 
 import { Parent } from './components/advance-use/test-ref'
+import { BlurExample } from './components/advance-use/test-event'
+
+import { TestSuspense } from './components/advance-use/test-suspence'
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const app = (
   <div>
-    <Parent />
+    <TestSuspense />
   </div>
 )
 root.render(app);
