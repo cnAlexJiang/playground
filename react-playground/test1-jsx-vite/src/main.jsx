@@ -158,38 +158,40 @@ import ReactDOM from 'react-dom/client'
 //     <h2>adsdjskl</h2>
 //   </div>
 // )
-import { Clock } from './components/test-state'
-import { Toggle } from './components/test-event'
-import { LoginControl, Page } from './components/test-condition-render'
-import { NumberList } from './components/test-list-render'
-import { NameForm, EssayForm, FlavorForm, Reservation } from './components/test-form'
-import { Calculator } from './components/test-state-hoist'
-import { SignUpDialog } from './components/test-composition-extend'
-// import { FilterableProductTable } from './components/test-react-philosophe/FilterableProductTable'
+// import { Clock } from './components/test-state'
+// import { Toggle } from './components/test-event'
+// import { LoginControl, Page } from './components/test-condition-render'
+// import { NumberList } from './components/test-list-render'
+// import { NameForm, EssayForm, FlavorForm, Reservation } from './components/test-form'
+// import { Calculator } from './components/test-state-hoist'
+// import { SignUpDialog } from './components/test-composition-extend'
+// // import { FilterableProductTable } from './components/test-react-philosophe/FilterableProductTable'
 
-import { FilterableProductTable } from './components/test-react-philosophe-hook/reactor-hook'
+// import { FilterableProductTable } from './components/test-react-philosophe-hook/reactor-hook'
 
 
-import { Glossary } from './components/advance-use/test-fragment'
+// import { Glossary } from './components/advance-use/test-fragment'
 
-import { Parent } from './components/advance-use/test-ref'
-import { BlurExample } from './components/advance-use/test-event'
+// import { Parent } from './components/advance-use/test-ref'
+// import { BlurExample } from './components/advance-use/test-event'
 
-import { TestSuspense } from './components/advance-use/test-suspence'
+// import { TestSuspense } from './components/advance-use/test-suspence'
 
-import { App } from './components/advance-use/test-errorboundary'
+// import { App } from './components/advance-use/test-errorboundary'
 
-import { WordAdder } from './components/advance-use/test-scu'
+// import { WordAdder } from './components/advance-use/test-scu'
 
-// import './components/advance-use/test-protal'
-import { ToDoList } from './components/advance-use/test-diffing'
+// // import './components/advance-use/test-protal'
+// import { ToDoList } from './components/advance-use/test-diffing'
 
-import { MouseTracker } from './components/advance-use/test-render-props'
+// import { MouseTracker } from './components/advance-use/test-render-props'
+
+import { Example } from './components/hooks/test-effect'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const app = (
   <div>
-    <MouseTracker />
+    <Example />
   </div>
 )
 root.render(app);
