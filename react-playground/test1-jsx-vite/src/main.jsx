@@ -177,10 +177,19 @@ import { BlurExample } from './components/advance-use/test-event'
 
 import { TestSuspense } from './components/advance-use/test-suspence'
 
+import { App } from './components/advance-use/test-errorboundary'
+
+import { WordAdder } from './components/advance-use/test-scu'
+
+// import './components/advance-use/test-protal'
+import { ToDoList } from './components/advance-use/test-diffing'
+
+import { MouseTracker } from './components/advance-use/test-render-props'
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const app = (
   <div>
-    <TestSuspense />
+    <MouseTracker />
   </div>
 )
 root.render(app);
