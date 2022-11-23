@@ -12,23 +12,32 @@
     test fetch
 </body>
 <script>
-    fetch('http://localhost:3000/user', {
-        headers: {
-            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+   async function  apiCall (url, options) {
+        return await fetch(url, options) 
+    }
 
-            'Content-Type': 'application/json'
-            // 'Content-Type': 'application/x-www-form-urlencoded',
+  fetch('http://localhost:3000/api1', {
+        headers: {
+            // 'Content-Type': 'application/json'
         },
-        // mode: "no-cors"
     }).then(response => {
         console.log(000, response);
-
         if (response.ok) {
             response.json().then(json => {
                 console.log(111, json);
+                return json;
             });
         }
     });
+
+   (async function(){
+    const res= await  apiCall('http://localhost:3000/api1') 
+    console.log(22, res);
+
+   })()
+
+
+    
 </script>
 
 </html>

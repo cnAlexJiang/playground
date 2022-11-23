@@ -16,8 +16,18 @@ app.get('/user', function (req, res) {
 
     // res.send(JSON.stringify(data))
 })
+app.get('/api1', function (req, res) {
+    const data = {
+        name: '11',
+        age: 11,
+    }
+    res.send(data)
+
+    // res.send(JSON.stringify(data))
+})
 
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
+

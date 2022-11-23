@@ -1,10 +1,15 @@
+//引入react核心库
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+//引入ReactDOM
+import ReactDOM from 'react-dom'
+//
+import {BrowserRouter} from 'react-router-dom'
+//引入App
 import App from './App'
-import './index.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+ReactDOM.render(
+	<BrowserRouter>
+		<App/>
+	</BrowserRouter>,
+	document.getElementById('root')
 )
