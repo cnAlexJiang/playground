@@ -6,15 +6,15 @@ import Header from './components/Header' //Header是一般组件
 import MyNavLink from './components/MyNavLink'
 
 
-// import { Button,DatePicker } from 'antd';
-// import {WechatOutlined,WeiboOutlined,SearchOutlined} from '@ant-design/icons'
-// const { RangePicker } = DatePicker;
+import { Button,DatePicker } from 'antd';
+import {WechatOutlined,WeiboOutlined,SearchOutlined} from '@ant-design/icons'
+const { RangePicker } = DatePicker;
 
 export default class App extends Component {
 	render() {
 		return (
 			<div>
-						{/* <div>
+						<div>
 				App....
 				<button>点我</button>
 				<Button type="primary">按钮1</Button>
@@ -27,7 +27,7 @@ export default class App extends Component {
 				<WeiboOutlined />
 				<DatePicker/>
 				<RangePicker/>
-			</div> */}
+			</div>
 				<div className="row">
 					<div className="col-xs-offset-2 col-xs-8">
 						<Header/>
