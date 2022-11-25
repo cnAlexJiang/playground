@@ -1,12 +1,12 @@
-import React from 'react';
-import { Counter } from './features/counter/Counter';
 import './App.css';
+ import {Button1} from './components/test1'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Counter />
+          hello
+          {/* <Button1/> */}
       </header>
     </div>
   );
