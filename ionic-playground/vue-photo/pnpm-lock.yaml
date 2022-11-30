@@ -4975,6 +4975,12 @@ packages:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
 
+  /source-map/0.6.1:
+    resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
+    engines: {node: '>=0.10.0'}
+    dev: true
+    optional: true
+
   /source-map/0.7.4:
     resolution: {integrity: sha512-l3BikUxvPOcn5E74dZiq5BGsTb5yEwhaTSzccU6t4sDOH8NWJCstKO5QT2CvtFoK6F0saL7p9xHAqHOlCPJygA==}
     engines: {node: '>= 8'}
@@ -8026,7 +8032,7 @@ packages:
       esutils: r2.cnpmjs.org/esutils/2.0.3
       optionator: r2.cnpmjs.org/optionator/0.8.3
     optionalDependencies:
-      source-map: r2.cnpmjs.org/source-map/0.6.1
+      source-map: 0.6.1
     dev: true
 
   r2.cnpmjs.org/eslint-plugin-cypress/2.12.1_eslint@8.28.0:
@@ -11553,7 +11559,7 @@ packages:
     dev: true
 
   r2.cnpmjs.org/vue-hot-reload-api/2.3.4:
-    resolution: {integrity: sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==, registry: http://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz}
+    resolution: {integrity: sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz}
     name: vue-hot-reload-api
     version: 2.3.4
     dev: true
