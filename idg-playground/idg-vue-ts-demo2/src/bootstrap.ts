@@ -6,7 +6,10 @@ import './init.less';
 import example from '../packages/example';
 import services from '../packages/services';
 import config from '../packages/config.json';
-
+import iview from '@idg/iview';
+import '@idg/iview/dist/styles/custom.css';
+import Vue from 'vue';
+Vue.use(iview );
 const { appid, proxyURL, appType, indexRouteName, lang, serviceAppid } = config;
 
 class MyApp extends App {
