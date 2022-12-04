@@ -1,5 +1,5 @@
 
-import { GlobalStyle } from './style';
+import { GlobalStyle } from './style.js';
 import { IconStyle } from './assets/iconfont/iconfont';
 import { renderRoutes } from 'react-router-config';//renderRoutes 读取路由配置转化为 Route 标签
 import routes from './routes/index.js';

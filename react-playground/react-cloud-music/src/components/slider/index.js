@@ -1,6 +1,6 @@
 //components/slider/index.js
 import React, { useEffect, useState } from 'react';
-import { SliderContainer } from './style';
+import { SliderContainer } from './style.js';
 import "swiper/dist/css/swiper.css";
 import Swiper from "swiper";
 
