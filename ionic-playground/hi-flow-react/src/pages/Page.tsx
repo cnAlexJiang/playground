@@ -2,11 +2,13 @@ import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, Io
 import { useParams } from 'react-router';
 import ExploreContainer from '../components/ExploreContainer';
 import './Page.css';
-
+import { getBannerRequest, getRecommendListRequest } from '../api/request'
 const Page: React.FC = () => {
 
   const { name } = useParams<{ name: string; }>();
-
+  getBannerRequest().then((response) => {
+    console.log(111, response)
+  })
   return (
     <IonPage>
       <IonHeader>
