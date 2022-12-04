@@ -1,0 +1,7 @@
+{
+  "name": "hi77",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
