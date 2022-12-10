@@ -1,9 +1,0 @@
-export const CONFIGS = {
-  DPC_API_URL: '/graphql',
-  SEASONS: {
-    THE_INTERNATIONAL_11: 7,
-    THE_INTERNATIONAL_10: 6,
-    THE_INTERNATIONAL_9: 5,
-    THE_INTERNATIONAL_8: 4,
-  },
-}
