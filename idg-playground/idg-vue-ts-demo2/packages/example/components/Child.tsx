@@ -18,9 +18,16 @@ export default class Child extends Vue {
   }
   public render() {
     console.log('render' ,this)
+
+    const myDiv= ()=>{
+      console.log(111)
+    return  <div>myDiv</div>
+    }
     return (
       <div class='flex justify-center items-center'>
         <p class='mr-6'>test-!</p>
+        <myDiv/>
+        {myDiv()}
         <div>
         <Button onClick={()=>{this.add()}}>123121</Button>
         <div>
