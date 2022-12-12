@@ -2,125 +2,54 @@ import G6 from '@antv/g6';
 
 const MIN_ARROW_SIZE = 3
 
-let n= 1
-const uniqueId = ()=>{
+let n = 1
+const uniqueId = () => {
   return n++
 }
+ 
+
+const offset = 50;
+function getPath(start, end) {
+  let cx1, cx2, cy1, cy2;
+  if (start.x <= end.x) {
+    const temp = (end.x - start.x) / 2;
+    const delta = temp > offset ? temp : offset;
+    cx1 = start.x + delta;
+    cx2 = end.x - delta;
+    cy1 = start.y;
+    cy2 = end.y;
+  }
+  if (start.x > end.x) {
+    cx1 = start.x + offset;
+    cx2 = end.x - offset > 0 ? end.x - offset : 0;
+    cy1 = start.y;
+    cy2 = end.y;
+  }
+  const path = [
+    ['M', start.x, start.y],
+    ['C', cx1, cy1, cx2, cy2, end.x, end.y - 4],
+    ['L', end.x, end.y],
+  ];
+  console.log('path', path);
+  return path;
+}
+
 
 export function init () {
 
-  /**
-   * Custom a new polyline
-   * by siogo's issue（https://github.com/antvis/g6/issues/814）
-   *
-   * If you want to fit the dragging, you need to adjust the controlpoints while dragging
-   */
-  // G6.registerEdge('line-arrow', {
-  //   options: {
-  //     style: {
-  //       stroke: '#ccc',
-  //     },
-  //   },
-  //   draw: function draw (cfg, group) {
-  //     const startPoint = cfg.startPoint;
-  //     const endPoint = cfg.endPoint;
 
-  //     const stroke = (cfg.style && cfg.style.stroke) || this.options.style.stroke;
-  //     const startArrow = (cfg.style && cfg.style.startArrow) || undefined;
-  //     const endArrow = (cfg.style && cfg.style.endArrow) || undefined;
-
-  //     const keyShape = group.addShape('path', {
-  //       attrs: {
-  //         path: [
-  //           ['M', startPoint.x, startPoint.y],
-  //           ['L', endPoint.x / 3 + (2 / 3) * startPoint.x, startPoint.y],
-  //           ['L', endPoint.x / 3 + (2 / 3) * startPoint.x, endPoint.y],
-  //           ['L', endPoint.x, endPoint.y],
-  //         ],
-  //         stroke,
-  //         lineWidth: 1,
-  //         startArrow,
-  //         endArrow,
-  //       },
-  //       className: 'edge-shape',
-  //       name: 'edge-shape',
-  //     });
-  //     return keyShape;
-  //   },
-  // }, 'cubic');
   G6.registerEdge('line-arrow', {
     draw (cfg, group) {
-      console.log('cfg=', cfg, 'group=', group);
       let sourceNode, targetNode, start, end
       if (typeof (cfg.source) === 'string') {
         cfg.source = cfg.sourceNode
       }
-      if (!cfg.start) {
-        cfg.start = {
-          x: 20,
-          y: 0
-        }
-      }
-      if (!cfg.end) {
-        cfg.end = {
-          x: -20,
-          y: 0
-        }
-      }
-      if (!cfg.source.x) {
-        sourceNode = cfg.source.getModel()
-        start = { x: sourceNode.x + cfg.start.x, y: sourceNode.y + cfg.start.y }
-      } else {
-        start = cfg.source
-      }
-      console.log('start', start)
-      if (typeof (cfg.target) === 'string') {
-        cfg.target = cfg.targetNode
-      }
-      if (!cfg.target.x) {
-
-        targetNode = cfg.target.getModel()
-        end = { x: targetNode.x + cfg.end.x, y: targetNode.y + cfg.end.y }
-      } else {
-        end = cfg.target
-      }
+  
+      start = cfg.startPoint
+      end = cfg.endPoint
       const divisor = 40
       let path = []
-      let hgap = Math.abs(end.x - start.x)
-      if (end.x > start.x) {
-        console.log('endx > start.x', end.x, '   ' , start.x)
-        path = [
-          ['M', start.x, start.y],
-          [
-            'C',
-            start.x,  start.y - hgap / (hgap / divisor),
-            end.x,    end.y + hgap / (hgap / divisor),
-            end.x,    end.y - 4
-          ],
-          [
-            'L',
-            end.x,
-            end.y
-          ]
-        ]
-      } else {
-        console.log('else  ', end.x, '   ' , start.x)
-
-        path = [
-          ['M', start.x, start.y],
-          [
-            'C',
-            start.x,    start.y - hgap / (hgap / divisor),
-            end.x,      end.y + hgap / (hgap / divisor),
-            end.x,      end.y - 4
-          ],
-          [
-            'L',
-            end.x,
-            end.y
-          ]
-        ]
-      }
+      path = getPath(start, end)
       let lineWidth = 1;
       lineWidth = lineWidth > MIN_ARROW_SIZE ? lineWidth : MIN_ARROW_SIZE;
       const width = lineWidth * 10 / 3;
@@ -147,7 +76,7 @@ export function init () {
       });
       return keyShape
     },
-
+ 
   });
 
 

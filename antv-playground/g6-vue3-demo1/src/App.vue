@@ -1,6 +1,6 @@
 <template>
-  <!-- <div id="container" style="width: 800px;height: 600px;"></div> -->
-  <div>
+  <div id="container" style="width: 800px;height: 600px;"></div>
+  <!-- <div>
     <div>
       <svg width="200" height="200">
         <path
@@ -37,13 +37,13 @@
         ></path>
       </svg>
     </div>
-  </div>
+  </div> -->
 </template>
 <script setup>
 import { onMounted } from 'vue'
 import { init } from './example/test3'
 onMounted(() => {
-  // init()
+  init()
 })
 function getPath21(x1, y1, x2, y2) {
   var path = 'M' + x1 + ' ' + y1 + ' '
@@ -57,7 +57,28 @@ function getPath21(x1, y1, x2, y2) {
   return path
 }
 
-function getPath2(x1, y1, x2, y2) {
+function getPath2(x1, y1, x2, y2 ){
+  let startPoint  ={}
+  let endPoint = {}
+  startPoint.x = x1
+  startPoint.y = y1
+  endPoint.x = x2
+  endPoint.y = y2
+  // startPoint, endPoint
+  // M startPoint.x  startPoint.y
+  // L startPoint.x   startPoint.y+4
+  // C startPoint.x  startPoint.y+4+80   endPoint.x endPoint.y-4-80  endPoint.x endPoint.y-4
+  // L endPoint.x endPoint.y
+  const res= [
+     `M ${startPoint.x} ${startPoint.y}`,
+     `L ${startPoint.x} ${startPoint.y + 4}`,
+     `C ${startPoint.x} ${startPoint.y + 4 + 80}  ${endPoint.x}  ${endPoint.y-4-80} ${endPoint.x} ${ endPoint.y-4} `,
+     `L ${endPoint.x} ${endPoint.y + 4}`,
+  ]
+  console.log(333 ,res)
+  return res
+}
+function getPath22(x1, y1, x2, y2) {
   console.log(x1 + ' ' + y1 + ' ' + x2 + ' ' + y2 + ' ')
   var path = 'M' + x1 + ' ' + y1 + ' '
   var cx1 = x1 < x2 ? x1 + (x2 - x1) / 2 : x1 + 50
