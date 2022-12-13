@@ -1,17 +1,17 @@
 ## todo list
 
-- [] rust
-- [] vite + vue + ts + tsx
-- [] vite + react +ts +tsx
-- [] css variable
+- [x] rust
+- [x] vite + vue + ts + tsx
+- [x] vite + react +ts +tsx
+- [x] css variable
 - [] 组件库搭建和发布
 - [] cli实现
 - [] 私有npm搭建
 - [] threejs 
-- [] Web apis
-  - [] MutationObserver
-  - [] ResizeObserver
-- [] css variable
+- [x] Web apis
+  - [x] MutationObserver
+  - [x] ResizeObserver
+- [x] css variable
 - [] ts playground
   - [] 数据结构与算法 JavaScript 描述
   - [] js readonly 数据研究 class  研究
