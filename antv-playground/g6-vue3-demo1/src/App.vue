@@ -4,7 +4,7 @@
 </template>
 <script setup>
 import { onMounted } from 'vue'
-import {init} from './auto-layout/test3'
+import {init} from './shortcut/test1'
 onMounted(() => {
   init()
 })
