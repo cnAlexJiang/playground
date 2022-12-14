@@ -1,0 +1,21 @@
+{
+  "name": "jest-demo2-esm",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "jest",
+    "coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
+    "vite": "^4.0.0"
+  },
+  "dependencies": {
+    "jest": "^29.3.1"
+  }
+}
