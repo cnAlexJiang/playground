@@ -1,53 +1,124 @@
+ // @ts-nocheck
 
-
-import React, { useState, useEffect } from 'react';
-
-import {Counter} from './test-useReducer'
-
-import {Parent} from './test-useCallback'
-import {Test} from './test-reduce-cotext'
-
-
-
-function Example() {
-  const [count, setCount] = useState(0);
-  console.log('argument', arguments);
-  // 只有count改变时才会执行
-  useEffect(() => {
-    // Update the document title using the browser API
-    document.title = `You clicked ${count} times`;
-    console.log('useEffect');
-    return  ()=>{
-      console.log('卸载 -1111');
-      }
-  },[count]);
-  useEffect(() => {
-    console.log('useEffect222');
-    return ()=>{
-    console.log('卸载3333');
-    }
-  },[ ]);
-  return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
+ import React, { Component } from "react";
+ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+ 
+ //初始化数据
+ const getItems = count =>
+   Array.from({ length: count }, (v, k) => k).map(k => ({
+     id: `item-${k + 1}`,
+     content: `this is content ${k + 1}`
+   }));
+ 
+ // 重新记录数组顺序
+ const reorder = (list, startIndex, endIndex) => {
+   const result = Array.from(list);
+ 
+   const [removed] = result.splice(startIndex, 1);
+ 
+   result.splice(endIndex, 0, removed);
+   return result;
+ };
+ 
+ const grid = 8;
+ 
+ // 设置样式
+ const getItemStyle = (isDragging, draggableStyle) => ({
+   // some basic styles to make the items look a bit nicer
+   userSelect: "none",
+   padding: grid * 2,
+   margin: `0 0 ${grid}px 0`,
+ 
+   // 拖拽的时候背景变化
+   background: isDragging ? "lightgreen" : "#ffffff",
+ 
+   // styles we need to apply on draggables
+   ...draggableStyle
+ }); 
+ 
+ const getListStyle = () => ({
+   background: 'black',
+   padding: grid,
+   width: 250
+ });
+ 
+ 
+ 
+ export class ReactBeautifulDnd extends Component {
+   constructor(props) {
+     super(props);
+     this.state = {
+       items: getItems(11)
+     };
+     this.onDragEnd = this.onDragEnd.bind(this);
+   }
+ 
+   onDragEnd(result) {
+     if (!result.destination) {
+       return;
+     }
+ 
+     const items = reorder(
+       this.state.items,
+       result.source.index,
+       result.destination.index
+     );
+ 
+     this.setState({
+       items
+     });
+   }
+ 
+ 
+   render() {
+     return (
+       <DragDropContext onDragEnd={this.onDragEnd} >
+         <center>
+           <Droppable droppableId="droppable">
+             {(provided, snapshot) => (
+               <div
+               //provided.droppableProps应用的相同元素.
+                 {...provided.droppableProps}
+                 // 为了使 droppable 能够正常工作必须 绑定到最高可能的DOM节点中provided.innerRef.
+                 ref={provided.innerRef}
+                 style={getListStyle(snapshot)}
+               >
+                 {this.state.items.map((item, index) => (
+                   <Draggable key={item.id} draggableId={item.id} index={index}>
+                     {(provided, snapshot) => (
+                       <div
+                         ref={provided.innerRef}
+                         {...provided.draggableProps}
+                         {...provided.dragHandleProps}
+                         style={getItemStyle(
+                           snapshot.isDragging,
+                           provided.draggableProps.style
+                         )}
+                       >
+                         {item.content}
+                       </div>
+                     )}
+                   </Draggable>
+                 ))}
+                 {provided.placeholder}
+               </div>
+             )}
+           </Droppable>
+         </center>
+       </DragDropContext>
+     );
+   }
+ }
+ 
+ 
+ const view = ()=>{
+  const root = {
+    'display':'flex'
+  }
+    return <div style={root}>
+      <div>111</div>
+      <ReactBeautifulDnd />
     </div>
-  );
-}
+ }
 
-
-
-function App(){
-  const [isShow,setIsShow] = useState(true);
-  return (
-    <div>
-        {isShow && <Test aa={1}/>}
-      <div>
-          <button onClick={()=>{setIsShow(!isShow)}}>setIsShow</button>
-      </div> 
-    </div>
-  )
-}
-export default App  
+ export default view
