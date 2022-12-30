@@ -30,4 +30,5 @@
   - https://github.com/twobin/react-lazyload
   - 图片懒加载
 
-- []
+- [] react-router-config
+  - 搭配 router-v5使用 不知道v6什么样子
