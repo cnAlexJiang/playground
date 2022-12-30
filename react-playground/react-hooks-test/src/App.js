@@ -1,53 +1,40 @@
+// @ts-nocheck
 
-
-import React, { useState, useEffect } from 'react';
-
-import {Counter} from './test-useReducer'
-
-import {Parent} from './test-useCallback'
-import {Test} from './test-reduce-cotext'
+import React, { Component } from "react";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 
 
-function Example() {
-  const [count, setCount] = useState(0);
-  console.log('argument', arguments);
-  // 只有count改变时才会执行
-  useEffect(() => {
-    // Update the document title using the browser API
-    document.title = `You clicked ${count} times`;
-    console.log('useEffect');
-    return  ()=>{
-      console.log('卸载 -1111');
-      }
-  },[count]);
-  useEffect(() => {
-    console.log('useEffect222');
-    return ()=>{
-    console.log('卸载3333');
-    }
-  },[ ]);
-  return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
-    </div>
-  );
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.myRef = React.createRef();
+    console.log(111, this.myRef)
+  }
+  render () {
+    return <div ref={this.myRef} />;
+  }
 }
-
-
-
-function App(){
-  const [isShow,setIsShow] = useState(true);
+const FancyButton = React.forwardRef((props, ref) => {
+  console.log(222, ref)
   return (
-    <div>
-        {isShow && <Test aa={1}/>}
-      <div>
-          <button onClick={()=>{setIsShow(!isShow)}}>setIsShow</button>
-      </div> 
-    </div>
+    <button ref={ref} className="FancyButton">
+    {props.children}
+  </button>
   )
+});
+
+
+const view = () => {
+  const root = {
+    'display': 'flex'
+  }
+
+  const ref = React.createRef();
+  console.log(111, ref)
+  return <div style={root}>
+    <FancyButton ref={ref}>Click me!</FancyButton>;
+  </div>
 }
-export default App  
+
+export default view
