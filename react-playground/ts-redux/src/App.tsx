@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Counter } from './features/counter/Counter'
 import {
   BrowserRouter as Router,
@@ -6,7 +6,8 @@ import {
   Route,
   Link,
   useRouteMatch,
-  useParams
+  useParams,
+  useHistory
 } from "react-router-dom";
 
 
@@ -43,7 +44,21 @@ export default function App() {
   }
   
   function Home() {
-    return <Counter/>  ;
+    const history = useHistory()
+    useEffect(() => {
+      const block = history.block(() => {
+      // 离开当前页面的时候 打印出拦截到了
+      console.log('拦截到了')
+   
+      //todo 
+      // 离开之前做什么操作
+   
+      // 确定返回离开页面
+      return block()
+      })
+  }, [])  
+    // return <Counter/>  ;
+    return <h2>home</h2> ;
   }
   
   function About() {
