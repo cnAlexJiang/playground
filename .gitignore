@@ -1,6 +1,7 @@
 /target
 hello-rust/target
 */node_modules/*
+*node_modules*
 .DS_Store
 fork-ts-checker-webpack-plugin
 
@@ -10,3 +11,5 @@ fork-ts-checker-webpack-plugin
 *node_modules*
 
 *.class
+
+*dist*
