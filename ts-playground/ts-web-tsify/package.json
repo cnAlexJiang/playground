@@ -1,0 +1,17 @@
+{
+  "name": "ts-web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "browserify main.ts -p [ tsify --noImplicitAny ] > bundle.js"
+  },
+  "keywords": [],
+  "author": "",
+  "description": "",
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "tsify": "^5.0.4",
+    "typescript": "^4.9.4"
+  }
+}
