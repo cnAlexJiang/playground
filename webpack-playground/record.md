@@ -27,3 +27,5 @@
 - [] 资源模块
 - [] entry 高级用法
 - [] package exports
+
+- [] Module Federation
