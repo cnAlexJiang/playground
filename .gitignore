@@ -13,3 +13,4 @@ fork-ts-checker-webpack-plugin
 *.class
 
 *dist*
+*pnpm-lock.yaml*
