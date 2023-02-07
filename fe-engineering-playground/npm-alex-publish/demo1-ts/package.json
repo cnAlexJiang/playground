@@ -1,0 +1,30 @@
+{
+  "name": "cn-alex-demo1",
+  "private": false,
+  "version": "0.0.5",
+  "description": "发包test",
+  "files": ["dist"],
+  "publishConfig": {
+    "main": "dist/cn-alex-demo1.cjs.js",
+    "module": "dist/cn-alex-demo1.es.js",
+    "typings": "dist/src/index.d.ts",
+    "files": ["dist"],
+    "registry": "https://registry.npmjs.org/",
+    "tag": "beta",
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc && rollup -c rollup.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-typescript": "^10.0.1",
+    "rimraf": "^4.1.2",
+    "rollup": "^3.14.0",
+    "typescript": "^4.9.5"
+  }
+}

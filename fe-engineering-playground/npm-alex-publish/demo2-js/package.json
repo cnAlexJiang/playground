@@ -1,0 +1,17 @@
+{
+  "name": "cn-alex-demo2",
+  "version": "0.0.4",
+  "description": "js pack by rollup",
+  "main": "demo2.cjs.js",
+  "module": "demo2.es.js",
+  "scripts": {
+    "build": "rollup -c rollup.config.js"
+  },
+  "files": ["dist"],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^3.14.0"
+  }
+}
