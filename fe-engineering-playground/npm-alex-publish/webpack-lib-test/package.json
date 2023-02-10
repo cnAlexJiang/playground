@@ -11,9 +11,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cn-alex-demo2": "0.0.5",
     "lodash": "^4.17.21",
+    "small-color-ui": "^1.0.1",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
-
+  },
+  "devDependencies": {
+    "cn-alex-demo3": "^1.0.0"
   }
 }

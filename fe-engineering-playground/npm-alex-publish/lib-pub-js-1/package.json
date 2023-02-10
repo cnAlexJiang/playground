@@ -1,0 +1,20 @@
+{
+  "name": "cn-alex-demo2",
+  "version": "0.0.7",
+  "description": "js pack by rollup",
+  "main": "dist/demo2.cjs.js",
+  "module": "dist/demo2.es.js",
+  "scripts": {
+    "build": "rollup -c rollup.config.js"
+  },
+  "publishConfig": {
+    "registry": "http://120.26.60.79:4873/"
+  },
+  "files": ["dist"],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^3.14.0"
+  }
+}
