@@ -4,7 +4,7 @@ hello-rust/target
 *node_modules*
 .DS_Store
 fork-ts-checker-webpack-plugin
-
+.VSCodeCounter
 **/node_modules
 .vscode
 *todel*
