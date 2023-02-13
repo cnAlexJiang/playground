@@ -13,7 +13,7 @@
   "dependencies": {
     "lodash": "^4.17.21",
     "webpack": "^5.75.0",
+    "cn-alex-demo2": "0.0.5",
     "webpack-cli": "^5.0.1"
-
   }
 }

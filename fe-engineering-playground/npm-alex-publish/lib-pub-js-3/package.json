@@ -1,0 +1,17 @@
+{
+  "name": "@cnalexj/test2",
+  "private": false,
+  "version": "0.0.3",
+  "description": "js pack by rollup",
+  "main": "dist/demo2.cjs.js",
+  "module": "dist/demo2.es.js",
+  "scripts": {
+    "build": "rollup -c rollup.config.js"
+  },
+  "files": ["dist"],
+  "keywords": [],
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^3.14.0"
+  }
+}
