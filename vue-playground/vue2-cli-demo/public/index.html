@@ -1,17 +1,85 @@
 <!DOCTYPE html>
 <html lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+  <!-- import Web Components -->
+  <script src="https://unpkg.com/@webcomponents/webcomponentsjs@latest/webcomponents-loader.js"></script>
+  <script type="module" src="https://unpkg.com/@dwane-vonage/dwanes-keypad@latest/dwanes-keypad.js?module"></script>
+  <style>
+    .demo {
+  font-family: sans-serif;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  padding: 20px 30px;
+  margin-top: 1em;
+  margin-bottom: 40px;
+  user-select: none;
+  overflow-x: auto;
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    "vault"
+    "keypad";
+  align-items: center;
+  justify-content: center;
+}
+
+#vaultContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  max-width: 300px;
+}
+
+#vault {
+  grid-area: vault;
+}
+
+#keypadContainer {
+  grid-area: keypad;
+}
+
+@media (min-width: 768px) {
+  .demo {
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: "vault keypad";
+  }
+}
+  </style>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+  </noscript>
+  <div id="app" class="demo">
+    <section id="vaultContainer">
+      Security Code: {{ code }} <br />
+      <img id="vault" :alt="image.alt" :src="image.src" />
+    </section>
+    <section id="keypadContainer">
+      <dwanes-keypad ref="keypad" actionText="Enter" cancelText="Quit" :placeholder="placeholder" @digits-sent="digitsSent"></dwanes-keypad>
+    </section>
+  </div>
+  <footer>
+    Vault image:
+    <a href="https://pixabay.com/vectors/vault-steel-vault-safe-bank-5013752/" target="_blank">Pixabay</a>
+    <br />
+    Minion image:
+    <a href="https://giphy.com/gifs/transparent-trailer-minions-oobNzX5ICcRZC" target="_blank">Giphy</a>
+  </footer>
+  <!-- built files will be auto injected -->
+</body>
+
 </html>
