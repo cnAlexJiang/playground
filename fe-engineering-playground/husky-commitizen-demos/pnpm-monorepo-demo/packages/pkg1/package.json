@@ -1,0 +1,24 @@
+{
+  "name": "@qftjs/monorepo1",
+  "version": "1.0.4-beta.3",
+  "description": "",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "release1": "bumpp --commit --push --tag",
+    "build": "father-build",
+    "watch": "father-build --watch"
+  },
+  "author": "qi.futao",
+  "license": "ISC",
+  "dependencies": {
+    "@qftjs/monorepo2": "workspace:*",
+    "axios": "^0.27.2"
+  }
+}

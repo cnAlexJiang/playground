@@ -5,8 +5,10 @@ import c1 from './components/test-router/child1.vue'
 import c2 from './components/test-router/child2.vue'
 import g1 from './components/test-router/grandson1.vue'
 import g2 from './components/test-router/grandson2.vue'
-import test from './components/HelloWorld.vue'
 import arrayupdate from './components/arrayupdate.vue'
+import test from './components/simulator-render/test'
+import simulate from './components/simulator-render/simulate'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -29,6 +31,7 @@ const routes = [
     ],
   },
   { path: '/test', component: test },
+  { path: '/simulate', name: 'simulate', component: simulate },
 ]
 
 export const router = new VueRouter({
