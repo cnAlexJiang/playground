@@ -1,0 +1,10 @@
+node_modules/
+screenshot.png
+.storybook/
+.vscode/
+.cache/
+.github/
+stories/
+docs/
+assets/
+coverage/
