@@ -8,8 +8,10 @@ router.get('/', function(req, res, next) {
 });
 
 // 获取用户信息
+
 router.get('/get_user', userController.showUser);
 router.get('/add_user', userController.addUser);
+router.get('/add_multi_user', userController.addMulti);
 
 
 module.exports = router;
