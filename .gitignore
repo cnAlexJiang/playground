@@ -14,3 +14,4 @@ fork-ts-checker-webpack-plugin
 
 *dist*
 pnpm-lock.yaml
+.env
