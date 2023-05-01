@@ -1,11 +1,6 @@
-<!--
- * @Author: your name
- * @Date: 2021-06-23 15:23:24
- * @LastEditTime: 2021-08-06 10:09:14
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \fabric-drawing-board\README.md
--->
+## 参考
+-  https://github.com/CC4J/fabric-drawing-board
+
 # fabric-drawing-borard
 
 use fabric to achievement drawing board and support free drawing, line, rect,cirlce,eraser,text,pan,scale,undo,redo,clear, save.
