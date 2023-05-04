@@ -27,6 +27,7 @@ app.use(express.json());
 
 // 使用对 表单提交的数据 进行格式化
 app.use(express.urlencoded({ extended: false }));
+
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 

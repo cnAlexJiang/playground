@@ -17,7 +17,14 @@ const userController = {
   },
   addUser: async function (req, res, next) {
     try {
-      let userData = await User.insert(   { name: 'aa', phone: '222',  }, 'id')
+      const body = req.body
+      console.log('body=',   JSON.stringify(body))
+      // let list = await User.all()
+      const {name, phone} = body
+      if(!name || !phone) {
+        throw new Error('参数缺失')
+      }
+      let userData = await User.insert( { name , phone  }, 'id')
       res.json({
         code: 200,
         message: '操作成功',
@@ -25,7 +32,7 @@ const userController = {
       })
     
     } catch (e) {
-      res.json({ code: 0, message: '操作失败', data: e })
+      res.json({ code: 0, message: '操作失败', data: e.message })
     }
   },
   addMulti: async function (req, res, next) {
@@ -64,7 +71,20 @@ const userController = {
       res.json({ code: 0, message: '操作失败', data: e })
     }
   },
-
+  delete: async function (req, res, next) {
+    try {
+      const {id} = req.body
+      let userData = await User.delete(id)
+      res.json({
+        code: 200,
+        message: '操作成功',
+        data: userData,
+      })
+    
+    } catch (e) {
+      res.json({ code: 0, message: '操作失败', data: e.message })
+    }
+  },
 }
 
 module.exports = userController

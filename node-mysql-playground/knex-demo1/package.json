@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "    nodemon ./bin/www",
-    "debug": "  NODE_OPTIONS='--inspect'  node ./bin/www"
+    "dev": "nodemon ./bin/www",
+    "start": "node ./bin/www",
+    "debug": "NODE_OPTIONS='--inspect'  node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
