@@ -1,0 +1,21 @@
+{
+  "name": "prisma-mongodb",
+  "version": "1.0.0",
+  "description": "- [] https://juejin.cn/post/7018489702651002887#heading-0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.0.0",
+    "prisma": "^4.13.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  },
+  "devDependencies": {
+    "@prisma/client": "^4.13.0"
+  }
+}

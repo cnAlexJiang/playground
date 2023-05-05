@@ -10,13 +10,13 @@ cd hello-prisma
 // 2 
 
 npm init -y
-npm install typescript ts-node @types/node  -D
+pnpm add typescript ts-node @types/node  -D
 
 // 3 
 
 npx tsc --init 
 
-npm install prisma  -D
+pnpm add prisma  -D
 
 npx prisma init --datasource-provider xxxdatabase
 
@@ -25,6 +25,10 @@ npx prisma init --datasource-provider xxxdatabase
 
 ###  数据迁移
 ```
+
+pnpm add @prisma/client -D
+
+
 npx prisma migrate dev --name init
 
 // 结果会创建 migrations
