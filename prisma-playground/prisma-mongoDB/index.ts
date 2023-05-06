@@ -2,10 +2,16 @@ import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
+// npx ts-node index.ts
+
 async function main() {
   // Connect the client
   await prisma.$connect()
   // ... you will write your Prisma Client queries here
+
+  // const allUsers = await prisma.user.findMany()
+  // console.log(allUsers)
+
 
   await prisma.user.create({
     data: {
@@ -22,11 +28,13 @@ async function main() {
   })
 
   const allUsers = await prisma.user.findMany({
-    include: {
-      posts: true,
-    },
+    // include: {
+    //   posts: true,
+    // },
   })
   console.dir(allUsers, { depth: null })
+
+ 
 }
 
 main()

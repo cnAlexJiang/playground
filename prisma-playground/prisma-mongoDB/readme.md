@@ -1,8 +1,35 @@
-## mongo使用参考
-- [] https://juejin.cn/post/7018489702651002887#heading-0
 
-docker-compose -f docker-compose.yml up -d 是一个启动 Docker Compose 服务的命令。
-其中 -f 参数用于指定使用哪个 Docker Compose 文件，这里指定了 docker-compose.yml 文件。如果不指定 -f 参数，则默认使用当前目录下的 docker-compose.yml 文件。
-up 命令用于启动服务，-d 参数表示在后台运行服务。
+## Using Prisma with MongoDB
+介绍了为啥需要 使用副本集
+- https://www.prisma.io/docs/guides/database/mongodb
 
-- [] https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/mongodb/creating-the-prisma-schema-typescript-mongodb
+
+## prisma 使用 mongo 副本集
+
+- [] 参考  https://stackoverflow.com/questions/73570090/prisma-mongodb-replica-set/76043251#76043251
+
+```
+Local Instance with docker
+An easy to use docker image is available that creates a single instance replica
+
+Pull the image with docker pull prismagraphql/mongo-single-replica:5.0.3
+Run the image with
+docker run --name mongo \
+      -p 27017:27017 \
+      -e MONGO_INITDB_ROOT_USERNAME="monty" \
+      -e MONGO_INITDB_ROOT_PASSWORD="pass" \
+      -d prismagraphql/mongo-single-replica:5.0.3
+The connection URL should like this
+DATABASE_URL="mongodb://monty:pass@localhost:27017/db_name?authSource=admin&directConnection=true"
+You must provide authSource=admin option otherwise authentication will fail
+
+MongoDB Atlas
+Create a free cluster with all default values
+Note the username, password and the hostname
+The URL should look like this
+DATABASE_URL="mongodb+srv://username:password@cluster_name.random_string.net/db_name?retryWrites=true&w=majority"
+Note that the official documentaion currently follows the previous format used for the local instance but here it does not include the port number and has the +srv suffix, without which I ran into some problems.
+
+If you want use the format used in the documentation then you must provide the option ssl=true and for the hostname you have to use the primary cluster which looks like random_string.mongodb.net:27017, which you can find in the overview tab after clicking in your cluster name
+
+```
