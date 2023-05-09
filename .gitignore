@@ -54,3 +54,5 @@ dianshang.ts
 packages.alex.dev.ts
 src-tauri/target
 .env
+
+*database*
